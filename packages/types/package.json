@@ -1,0 +1,22 @@
+{
+  "name": "@colorie-track/types",
+  "version": "1.0.0",
+  "description": "types for colorie-track app",
+  "private": true,
+  "main": "dist/index.js",
+  "exports": {
+    "./IAuth": "./src/auth.types.ts"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "typescript": "^6.0.2",
+    "@colorie-track/typescript-config": "workspace:*",
+    "@colorie-track/schemas": "workspace:*"
+  }
+}

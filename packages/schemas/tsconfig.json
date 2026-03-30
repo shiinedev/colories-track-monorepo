@@ -1,0 +1,3 @@
+{
+  "extends": "@colorie-track/typescript-config/base.json",
+}
