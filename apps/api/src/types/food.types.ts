@@ -26,4 +26,5 @@ export interface IFood {
     input: SaveFoodEntryResult,
     userId: string,
   ): Promise<IFoodModel>;
+  discardAnalyzedFood(storageKey: string): Promise<void>;
 }

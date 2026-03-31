@@ -7,7 +7,7 @@ import {
 import sharp from "sharp";
 import crypto from "crypto";
 import { env } from "@/config/env";
-import { PutObjectCommand } from "@aws-sdk/client-s3";
+import { DeleteObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
 import { r2Config } from "@/config/r2";
 import { OpenAI } from "openai";
 import { zodResponseFormat } from "openai/helpers/zod";
@@ -206,6 +206,28 @@ export class FoodService implements IFood {
     } catch (error) {
       log.error({
         message: `Failed to save food entry`,
+        error,
+      });
+      throw error;
+    }
+  }
+
+  async discardAnalyzedFood(storageKey: string): Promise<void> {
+    try {
+      const deleteCommand = new DeleteObjectCommand({
+        Bucket: r2Config.bucket,
+        Key: storageKey,
+      });
+
+      const result = await r2Config.client.send(deleteCommand);
+
+      log.info({
+        message: `Discarded analyzed food: ${storageKey}`,
+        result,
+      });
+    } catch (error) {
+      log.error({
+        message: `Failed to discard analyzed food: ${storageKey}`,
         error,
       });
       throw error;

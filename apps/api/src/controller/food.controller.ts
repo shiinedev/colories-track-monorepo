@@ -27,7 +27,7 @@ export const scanFood = async (req: Request, res: Response) => {
   });
 };
 
-export const ScanImage = async (req: Request, res: Response) => {
+export const analyzeImage = async (req: Request, res: Response) => {
   const { file } = req;
 
   if (!file) {
@@ -64,5 +64,23 @@ export const saveFoodEntry = async (req: Request, res: Response) => {
   return res.status(200).json({
     message: "Food entry saved successfully",
     result,
+  });
+};
+
+export const discardAnalyzedFood = async (req: Request, res: Response) => {
+  if (!req.user) {
+    return res.status(401).json({ error: "Unauthorized" });
+  }
+
+  const { storageKey } = req.body;
+
+  if (!storageKey) {
+    return res.status(400).json({ error: "Storage key is required" });
+  }
+
+  await foodService.discardAnalyzedFood(storageKey);
+
+  return res.status(200).json({
+    message: "Analyzed food discarded successfully",
   });
 };
