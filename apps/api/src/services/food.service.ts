@@ -3,7 +3,7 @@ import {
   FoodAnalysisResult,
   FoodAnalysisSchema,
   SaveFoodEntryResult,
-} from "@colorie-track/schemas/foodSchema";
+} from "@calorie-track/schemas/foodSchema";
 import sharp from "sharp";
 import crypto from "crypto";
 import { env } from "@/config/env";
@@ -16,7 +16,7 @@ import type { ImageType, ScanFoodReturn, IFood } from "@/types/food.types";
 
 export class FoodService implements IFood {
   private openai = new OpenAI({
-    apiKey: env.openApiKey,
+    apiKey: env.OPENAI_API_KEY,
   });
 
   async scanFood<T extends ImageType>(
@@ -104,9 +104,9 @@ export class FoodService implements IFood {
   async uploadToR2(buffer: Buffer): Promise<{ url: string; key: string }> {
     const fileName = `${crypto.randomBytes(16).toString("hex")}.jpg`;
 
-    const key = `${env.r2.BUCKET_NAME}/${fileName}`;
+    const key = `${r2Config.bucket}/${fileName}`;
     log.info({
-      message: `BUCKET_NAME : ${env.r2.BUCKET_NAME}`,
+      message: `BUCKET_NAME : ${r2Config.bucket}`,
     });
 
     try {

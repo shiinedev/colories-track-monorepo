@@ -1,4 +1,4 @@
-import type { MealType } from "@colorie-track/schemas/foodSchema";
+import type { MealType } from "@calorie-track/schemas/foodSchema";
 import { Document, model, Schema, Types } from "mongoose";
 
 export interface IFoodModel extends Document {

@@ -23,12 +23,15 @@ importers:
       '@aws-sdk/client-s3':
         specifier: ^3.1015.0
         version: 3.1015.0
-      '@colorie-track/schemas':
+      '@calorie-track/schemas':
         specifier: workspace:*
         version: link:../../packages/schemas
-      '@colorie-track/types':
+      '@calorie-track/types':
         specifier: workspace:*
         version: link:../../packages/types
+      '@t3-oss/env-core':
+        specifier: ^0.13.11
+        version: 0.13.11(typescript@6.0.2)(zod@4.3.6)
       bcryptjs:
         specifier: ^3.0.3
         version: 3.0.3
@@ -66,7 +69,10 @@ importers:
         specifier: ^4.3.6
         version: 4.3.6
     devDependencies:
-      '@colorie-track/typescript-config':
+      '@calorie-track/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      '@calorie-track/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
       '@types/bcryptjs':
@@ -96,7 +102,7 @@ importers:
 
   apps/web:
     dependencies:
-      '@colorie-track/ui':
+      '@calorie-track/ui':
         specifier: workspace:*
         version: link:../../packages/ui
       next:
@@ -109,10 +115,10 @@ importers:
         specifier: ^19.2.0
         version: 19.2.0(react@19.2.0)
     devDependencies:
-      '@colorie-track/eslint-config':
+      '@calorie-track/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
-      '@colorie-track/typescript-config':
+      '@calorie-track/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
       '@types/node':
@@ -169,14 +175,17 @@ importers:
 
   packages/schemas:
     dependencies:
-      '@colorie-track/types':
+      '@calorie-track/types':
         specifier: workspace:*
         version: link:../types
       zod:
         specifier: ^4.3.6
         version: 4.3.6
     devDependencies:
-      '@colorie-track/typescript-config':
+      '@calorie-track/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@calorie-track/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@types/node':
@@ -188,10 +197,13 @@ importers:
 
   packages/types:
     devDependencies:
-      '@colorie-track/schemas':
+      '@calorie-track/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@calorie-track/schemas':
         specifier: workspace:*
         version: link:../schemas
-      '@colorie-track/typescript-config':
+      '@calorie-track/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@types/node':
@@ -212,10 +224,10 @@ importers:
         specifier: ^19.2.0
         version: 19.2.0(react@19.2.0)
     devDependencies:
-      '@colorie-track/eslint-config':
+      '@calorie-track/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@colorie-track/typescript-config':
+      '@calorie-track/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@types/node':
@@ -1046,6 +1058,23 @@ packages:
 
   '@swc/helpers@0.5.15':
     resolution: {integrity: sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==}
+
+  '@t3-oss/env-core@0.13.11':
+    resolution: {integrity: sha512-sM7GYY+KL7H/Hl0BE0inWfk3nRHZOLhmVn7sHGxaZt9FAR6KqREXAE+6TqKfiavfXmpRxO/OZ2QgKRd+oiBYRQ==}
+    peerDependencies:
+      arktype: ^2.1.0
+      typescript: '>=5.0.0'
+      valibot: ^1.0.0-beta.7 || ^1.0.0
+      zod: ^3.24.0 || ^4.0.0
+    peerDependenciesMeta:
+      arktype:
+        optional: true
+      typescript:
+        optional: true
+      valibot:
+        optional: true
+      zod:
+        optional: true
 
   '@tsconfig/node10@1.0.12':
     resolution: {integrity: sha512-UCYBaeFvM11aU2y3YPZ//O5Rhj+xKyzy7mvcIoAjASbigy8mHMryP5cK7dgjlz2hWxh1g5pLw084E0a/wlUSFQ==}
@@ -3834,6 +3863,11 @@ snapshots:
   '@swc/helpers@0.5.15':
     dependencies:
       tslib: 2.8.1
+
+  '@t3-oss/env-core@0.13.11(typescript@6.0.2)(zod@4.3.6)':
+    optionalDependencies:
+      typescript: 6.0.2
+      zod: 4.3.6
 
   '@tsconfig/node10@1.0.12': {}
 

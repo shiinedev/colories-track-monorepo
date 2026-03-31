@@ -1,5 +1,5 @@
 {
-  "extends": "@colorie-track/typescript-config/base.json",
+  "extends": "@calorie-track/typescript-config/base.json",
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src",

@@ -1,5 +1,5 @@
 {
-  "extends": "@colorie-track/typescript-config/react-library.json",
+  "extends": "@calorie-track/typescript-config/react-library.json",
   "compilerOptions": {
     "outDir": "dist",
     "strictNullChecks": true,

@@ -2,7 +2,7 @@ import { IUser } from "@/models/user.model";
 import type {
   RegisterSchema,
   LoginSchema,
-} from "@colorie-track/schemas/authSchema";
+} from "@calorie-track/schemas/authSchema";
 
 export interface IAuth {
   register({

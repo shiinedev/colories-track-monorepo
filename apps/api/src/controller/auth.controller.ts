@@ -1,5 +1,5 @@
 import { authService } from "../services/auth.service";
-import { LoginSchema, RegisterSchema } from "@colorie-track/schemas/authSchema";
+import { LoginSchema, RegisterSchema } from "@calorie-track/schemas/authSchema";
 import type { Request, Response } from "express";
 
 export const registerUser = async (req: Request, res: Response) => {

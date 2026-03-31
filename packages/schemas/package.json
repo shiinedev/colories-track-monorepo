@@ -1,5 +1,5 @@
 {
-  "name": "@colorie-track/schemas",
+  "name": "@calorie-track/schemas",
   "version": "1.0.0",
   "private": true,
   "description": "",
@@ -14,7 +14,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "lint": "eslint --max-warnings 0"
   },
   "keywords": [],
   "author": "",
@@ -22,10 +23,11 @@
   "devDependencies": {
     "@types/node": "^22.15.3",
     "typescript": "^6.0.2",
-    "@colorie-track/typescript-config": "workspace:*"
+    "@calorie-track/typescript-config": "workspace:*",
+    "@calorie-track/eslint-config": "workspace:*"
   },
   "dependencies": {
     "zod": "^4.3.6",
-    "@colorie-track/types": "workspace:*"
+    "@calorie-track/types": "workspace:*"
   }
 }

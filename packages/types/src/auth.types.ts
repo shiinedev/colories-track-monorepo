@@ -1,7 +1,7 @@
 import type {
   RegisterSchema,
   LoginSchema,
-} from "@colorie-track/schemas/authSchema";
+} from "@calorie-track/schemas/authSchema";
 
 export interface IAuth {
   register({ input }: { input: RegisterSchema }): Promise<void>;

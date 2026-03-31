@@ -1,5 +1,5 @@
 {
-  "extends": "@colorie-track/typescript-config/nextjs.json",
+  "extends": "@calorie-track/typescript-config/nextjs.json",
   "compilerOptions": {
     "plugins": [
       {

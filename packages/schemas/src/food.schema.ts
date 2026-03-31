@@ -1,12 +1,6 @@
 import z from "zod";
 
-export const MealTypeSchema = z.enum([
-  "breakfast",
-  "lunch",
-  "dinner",
-  "snack",
-  "other",
-]);
+export const MealTypeSchema = z.enum(["breakfast", "lunch", "dinner", "snack"]);
 
 export const FoodAnalysisSchema = z.object({
   foodName: z.string().describe("The name of the food"),
