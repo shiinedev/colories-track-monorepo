@@ -5,7 +5,8 @@
   "private": true,
   "main": "dist/index.js",
   "exports": {
-    "./IAuth": "./src/auth.types.ts"
+    "./auth.types.ts": "./src/auth.types.ts",
+    "./report.types.ts": "./src/report.type.ts"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,6 +16,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@calorie-track/schemas": "workspace:*"
+  },
   "devDependencies": {
     "@types/node": "^22.15.3",
     "typescript": "^6.0.2",

@@ -1,7 +1,5 @@
 import FoodModel from "@/models/food.model";
 import {
-  CalculateMacrosInput,
-  CalculateMacrosResult,
   DailyData,
   DailyTotals,
   IDailyStats,
@@ -9,9 +7,13 @@ import {
   IMealStats,
   IMonthlyReportStats,
   IOverallStats,
-  IReport,
   IWeeklyReportStats,
   MacrosStats,
+} from "@calorie-track/types/report.types.ts";
+import {
+  CalculateMacrosInput,
+  CalculateMacrosResult,
+  IReport,
   PrepareMacrosInput,
 } from "@/types/report.types";
 import { initilDailySummary } from "@/utils/constants";

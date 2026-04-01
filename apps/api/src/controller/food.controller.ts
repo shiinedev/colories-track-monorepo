@@ -3,7 +3,7 @@ import { log } from "evlog";
 import type { Request, Response } from "express";
 
 export const scanFood = async (req: Request, res: Response) => {
-  const { file } = req;
+  const { file } = req.body;
 
   if (!file) {
     return res
@@ -28,7 +28,7 @@ export const scanFood = async (req: Request, res: Response) => {
 };
 
 export const analyzeImage = async (req: Request, res: Response) => {
-  const { file } = req;
+  const { file } = req.body;
 
   if (!file) {
     return res

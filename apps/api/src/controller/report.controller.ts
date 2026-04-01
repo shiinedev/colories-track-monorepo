@@ -1,16 +1,8 @@
 import { reportService } from "@/services/report.service";
 import { log } from "evlog";
 import type { Request, Response } from "express";
-import {
-  subDays,
-  addDays,
-  format,
-  subMonths,
-  startOfMonth,
-  endOfMonth,
-  parseISO,
-} from "date-fns";
-import { IWeekSummary } from "@/types/report.types";
+import { subDays, addDays, format, startOfMonth, endOfMonth } from "date-fns";
+import { IWeekSummary } from "@calorie-track/types/report.types.ts";
 
 export const getDailyReport = async (req: Request, res: Response) => {
   if (!req.user) {

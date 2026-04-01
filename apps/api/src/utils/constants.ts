@@ -1,4 +1,4 @@
-import { IDailyReportStats } from "@/types/report.types";
+import { IDailyReportStats } from "@calorie-track/types/report.types.ts";
 
 export const initilDailySummary: IDailyReportStats = {
   totalEntries: 0,
