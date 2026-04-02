@@ -7,8 +7,8 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "exports": {
-    "./authSchema": "./src/auth.schema.ts",
-    "./foodSchema": "./src/food.schema.ts"
+    "./authSchema": "./dist/auth.schema.js",
+    "./foodSchema": "./dist/food.schema.js"
   },
   "scripts": {
     "build": "tsc",
