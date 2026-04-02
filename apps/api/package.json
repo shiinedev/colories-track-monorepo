@@ -6,7 +6,7 @@
   "main": "dist/server.js",
   "type": "module",
   "scripts": {
-    "build": "pnpm --filter @calorie-track/schemas build && tsc && tsc-alias",
+    "build": "tsc && tsc-alias",
     "start": "node dist/server.js",
     "dev": "tsx watch src/server.ts",
     "lint": "eslint --max-warnings 0"

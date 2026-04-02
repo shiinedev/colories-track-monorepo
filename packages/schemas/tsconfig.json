@@ -1,8 +1,7 @@
 {
   "extends": "@calorie-track/typescript-config/base.json",
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": "src",
+    "outDir": "dist",
   },
-  "include": ["src/**/*"],
 }
