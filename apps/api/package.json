@@ -5,7 +5,7 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && tsc-alias",
     "start": "node dist/server.js",
     "dev": "tsx watch src/server.ts",
     "lint": "eslint --max-warnings 0"
