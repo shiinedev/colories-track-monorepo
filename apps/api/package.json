@@ -4,6 +4,7 @@
   "private": true,
   "description": "",
   "main": "dist/server.js",
+  "type": "module",
   "scripts": {
     "build": "tsc && tsc-alias",
     "start": "node dist/server.js",
