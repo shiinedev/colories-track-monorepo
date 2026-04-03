@@ -1,1 +1,17 @@
-export * from "./report.type.js";
+export type {
+  DailyData,
+  DailyTotals,
+  IBaseStats,
+  IDailyReportStats,
+  IDailyStats,
+  IMacrosStats,
+  IMealBreakdown,
+  IMealStats,
+  IMonthlyReportStats,
+  IOverallStats,
+  IWeekSummary,
+  IWeeklyReportStats,
+  MacrosStats,
+  MealType,
+  MicrostatsKeys,
+} from "./report.type";

@@ -4,25 +4,19 @@
   "description": "types for calorie-track app",
   "private": true,
   "main": "src/index.ts",
+  "types": "src/index.ts",
   "type": "module",
   "exports": {
     "./report.types.ts": "./src/report.type.ts"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --max-warnings 0",
-    "check-types": "tsc --noEmit"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@calorie-track/schemas": "workspace:*"
+  "peerDependencies": {
+    "@types/node": "^22.15.3",
+    "typescript": "^6.0.2"
   },
   "devDependencies": {
-    "@types/node": "^22.15.3",
-    "typescript": "^6.0.2",
-    "@calorie-track/typescript-config": "workspace:*",
-    "@calorie-track/eslint-config": "workspace:*"
+    "@calorie-track/typescript-config": "workspace:*"
   }
 }

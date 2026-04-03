@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "description": "",
-  "main": "src/server.ts",
+  "main": "dist/server.js",
   "type": "module",
   "scripts": {
-    "build": "tsc  -b && tsc-alias",
-    "start": "tsx src/server.ts",
+    "build": "tsup",
+    "start": "node dist/server.js",
     "dev": "tsx watch src/server.ts",
     "lint": "eslint --max-warnings 0",
     "check-types": "tsc  -b --noEmit"
@@ -43,6 +43,7 @@
     "multer": "^2.1.1",
     "openai": "^6.33.0",
     "sharp": "^0.34.5",
+    "tsup": "^8.5.1",
     "zod": "^4.3.6"
   }
 }
