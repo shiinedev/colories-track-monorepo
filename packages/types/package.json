@@ -6,7 +6,6 @@
   "main": "src/index.ts",
   "type": "module",
   "exports": {
-    "./auth.types.ts": "./src/auth.types.ts",
     "./report.types.ts": "./src/report.type.ts"
   },
   "scripts": {
