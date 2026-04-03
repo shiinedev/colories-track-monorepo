@@ -1,4 +1,4 @@
-import { foodService } from "@/services/food.service.js";
+import { foodService } from "@/services/food.service";
 import { log } from "evlog";
 import type { Request, Response } from "express";
 

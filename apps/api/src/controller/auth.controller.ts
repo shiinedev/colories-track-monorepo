@@ -1,4 +1,4 @@
-import { authService } from "@/services/auth.service.js";
+import { authService } from "@/services/auth.service";
 import { LoginSchema, RegisterSchema } from "@calorie-track/schemas/authSchema";
 import type { Request, Response } from "express";
 

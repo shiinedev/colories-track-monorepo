@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { requireToken } from "@/middleware/auth.js";
+import { requireToken } from "@/middleware/auth";
 import {
   getDailyReport,
   getMonthlyReport,
   getWeeklyReport,
-} from "@/controller/report.controller.js";
+} from "@/controller/report.controller";
 
 export const reportRoutes = Router();
 

@@ -1,15 +1,16 @@
 {
   "name": "@calorie-track/api",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": true,
   "description": "",
-  "main": "dist/server.js",
+  "main": "src/server.ts",
   "type": "module",
   "scripts": {
-    "build": "tsc && tsc-alias",
-    "start": "node dist/server.js",
+    "build": "tsc  -b && tsc-alias",
+    "start": "tsx src/server.ts",
     "dev": "tsx watch src/server.ts",
-    "lint": "eslint --max-warnings 0"
+    "lint": "eslint --max-warnings 0",
+    "check-types": "tsc  -b --noEmit"
   },
   "author": "shiinedev",
   "license": "ISC",

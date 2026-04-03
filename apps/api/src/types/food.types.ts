@@ -1,4 +1,4 @@
-import { IFoodModel } from "@/models/food.model.js";
+import { IFoodModel } from "@/models/food.model";
 import type {
   FoodAnalysisResult,
   SaveFoodEntryResult,

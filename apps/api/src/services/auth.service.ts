@@ -1,8 +1,8 @@
 import { RegisterSchema, LoginSchema } from "@calorie-track/schemas/authSchema";
-import User, { IUser } from "@/models/user.model.js";
-import { IAuth } from "@/types/auth.types.js";
+import User, { IUser } from "@/models/user.model";
+import { IAuth } from "@/types/auth.types";
 import { log } from "evlog";
-import { generateToken } from "@/utils/token.js";
+import { generateToken } from "@/utils/token";
 
 export class AuthService implements IAuth {
   async register({

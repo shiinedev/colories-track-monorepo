@@ -1,5 +1,5 @@
-import User, { IUser } from "@/models/user.model.js";
-import { verifyToken } from "@/utils/token.js";
+import User, { IUser } from "@/models/user.model";
+import { verifyToken } from "@/utils/token";
 import type { NextFunction, Request, Response } from "express";
 
 declare global {

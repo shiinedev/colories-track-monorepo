@@ -1,7 +1,7 @@
 import { Router } from "express";
-import userRouter from "./v1/user.routes.js";
-import foodRoutes from "./v1/food.routes.js";
-import reportRoutes from "./v1/report.route.js";
+import userRouter from "./v1/user.routes";
+import foodRoutes from "./v1/food.routes";
+import reportRoutes from "./v1/report.route";
 
 const V1routes = Router();
 

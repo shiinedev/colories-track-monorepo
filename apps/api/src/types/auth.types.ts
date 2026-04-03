@@ -1,4 +1,4 @@
-import { IUser } from "@/models/user.model.js";
+import { IUser } from "@/models/user.model";
 import type {
   RegisterSchema,
   LoginSchema,

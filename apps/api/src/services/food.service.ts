@@ -6,13 +6,13 @@ import {
 } from "@calorie-track/schemas/foodSchema";
 import sharp from "sharp";
 import crypto from "crypto";
-import { env } from "@/config/env.js";
+import { env } from "@/config/env";
 import { DeleteObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
-import { r2Config } from "@/config/r2.js";
+import { r2Config } from "@/config/r2";
 import { OpenAI } from "openai";
 import { zodResponseFormat } from "openai/helpers/zod";
-import FoodModel, { IFoodModel } from "@/models/food.model.js";
-import type { ImageType, ScanFoodReturn, IFood } from "@/types/food.types.js";
+import FoodModel, { IFoodModel } from "@/models/food.model";
+import type { ImageType, ScanFoodReturn, IFood } from "@/types/food.types";
 
 export class FoodService implements IFood {
   private openai = new OpenAI({
