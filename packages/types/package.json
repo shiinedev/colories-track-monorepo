@@ -25,7 +25,6 @@
     "@types/node": "^22.15.3",
     "typescript": "^6.0.2",
     "@calorie-track/typescript-config": "workspace:*",
-    "@calorie-track/schemas": "workspace:*",
     "@calorie-track/eslint-config": "workspace:*"
   }
 }

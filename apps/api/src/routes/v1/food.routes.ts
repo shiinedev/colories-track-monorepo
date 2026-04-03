@@ -7,7 +7,7 @@ import {
 import { requireToken } from "@/middleware/auth";
 import { upload } from "@/middleware/upload";
 import { validateSchema } from "@/middleware/validate-schema";
-import { saveFoodEntrySchema } from "@calorie-track/schemas/foodSchema";
+import { saveFoodEntrySchema } from "@/schema/food.schema";
 import { Router } from "express";
 
 const foodRoutes = Router();

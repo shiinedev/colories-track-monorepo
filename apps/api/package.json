@@ -29,7 +29,6 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1015.0",
-    "@calorie-track/schemas": "workspace:*",
     "@calorie-track/types": "workspace:*",
     "@t3-oss/env-core": "^0.13.11",
     "bcryptjs": "^3.0.3",

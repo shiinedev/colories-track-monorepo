@@ -1,8 +1,5 @@
 import { IUser } from "@/models/user.model";
-import type {
-  RegisterSchema,
-  LoginSchema,
-} from "@calorie-track/schemas/authSchema";
+import type { RegisterSchema, LoginSchema } from "@/schema/auth.schema";
 
 export interface IAuth {
   register({

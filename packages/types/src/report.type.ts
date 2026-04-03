@@ -1,4 +1,4 @@
-import { MealType } from "@calorie-track/schemas/foodSchema";
+export type MealType = "breakfast" | "lunch" | "dinner" | "snack";
 
 export interface IBaseStats {
   totalCalories: number;

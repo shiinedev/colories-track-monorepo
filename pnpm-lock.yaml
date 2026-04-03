@@ -23,9 +23,6 @@ importers:
       '@aws-sdk/client-s3':
         specifier: ^3.1015.0
         version: 3.1015.0
-      '@calorie-track/schemas':
-        specifier: workspace:*
-        version: link:../../packages/schemas
       '@calorie-track/types':
         specifier: workspace:*
         version: link:../../packages/types

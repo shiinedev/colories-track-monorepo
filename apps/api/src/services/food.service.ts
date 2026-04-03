@@ -3,7 +3,7 @@ import {
   FoodAnalysisResult,
   FoodAnalysisSchema,
   SaveFoodEntryResult,
-} from "@calorie-track/schemas/foodSchema";
+} from "@/schema/food.schema";
 import sharp from "sharp";
 import crypto from "crypto";
 import { env } from "@/config/env";

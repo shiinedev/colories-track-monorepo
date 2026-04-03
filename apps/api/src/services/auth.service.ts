@@ -1,4 +1,4 @@
-import { RegisterSchema, LoginSchema } from "@calorie-track/schemas/authSchema";
+import { RegisterSchema, LoginSchema } from "@/schema/auth.schema";
 import User, { IUser } from "@/models/user.model";
 import { IAuth } from "@/types/auth.types";
 import { log } from "evlog";
