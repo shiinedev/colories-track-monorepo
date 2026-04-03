@@ -1,10 +1,9 @@
 {
   "name": "@calorie-track/types",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "types for calorie-track app",
   "private": true,
-  "main": "dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "src/index.ts",
   "type": "module",
   "exports": {
     "./auth.types.ts": "./src/auth.types.ts",
@@ -13,7 +12,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --max-warnings 0",
-    "build": "tsc"
+    "build": "tsc",
+    "check-types": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",

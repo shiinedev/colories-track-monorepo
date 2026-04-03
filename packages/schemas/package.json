@@ -1,19 +1,19 @@
 {
   "name": "@calorie-track/schemas",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": true,
   "description": "",
-  "main": "dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "src/index.ts",
   "type": "module",
   "exports": {
-    "./authSchema": "./dist/auth.schema.js",
-    "./foodSchema": "./dist/food.schema.js"
+    "./authSchema": "./src/auth.schema.ts",
+    "./foodSchema": "./src/food.schema.ts"
   },
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "lint": "eslint --max-warnings 0"
+    "lint": "eslint --max-warnings 0",
+    "check-types": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
