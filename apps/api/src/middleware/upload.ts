@@ -6,7 +6,7 @@ const storage = multer.memoryStorage();
 
 export const fileFilter = (
   req: Request,
-  file: any,
+  file: Express.Multer.File,
   cb: FileFilterCallback,
 ): void => {
   const allowedMimiTypes = /jpeg|png|gif|webp|jpg/;

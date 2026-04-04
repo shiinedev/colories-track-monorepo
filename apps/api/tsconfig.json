@@ -3,6 +3,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src",
+    "types": ["express", "node", "multer"],
     "paths": {
       "@/*": ["./src/*"],
     },
