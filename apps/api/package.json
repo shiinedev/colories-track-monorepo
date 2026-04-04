@@ -15,8 +15,6 @@
   "author": "shiinedev",
   "license": "ISC",
   "devDependencies": {
-    "@calorie-track/eslint-config": "workspace:*",
-    "@calorie-track/typescript-config": "workspace:*",
     "@types/bcryptjs": "^3.0.0",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
@@ -28,6 +26,8 @@
     "typescript": "^6.0.2"
   },
   "dependencies": {
+    "@calorie-track/eslint-config": "workspace:*",
+    "@calorie-track/typescript-config": "workspace:*",
     "@aws-sdk/client-s3": "^3.1015.0",
     "@calorie-track/types": "workspace:*",
     "@t3-oss/env-core": "^0.13.11",
