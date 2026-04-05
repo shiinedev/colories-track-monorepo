@@ -1,4 +1,4 @@
-# 🚀 Monorepo API Deployment Guide (Vercel + Node.js + TypeScript)
+# 🚀 Monorepo API Deployment Guide (Node.js + TypeScript)
 
 This guide documents how to successfully deploy a **monorepo API** and avoid common production errors.
 
@@ -58,6 +58,36 @@ cd ../.. && turbo build --filter=@calorie-track/api
 
 ---
 
+## 🏗️ Railway Configuration
+
+### ✅ Build Command
+
+```bash
+pnpm install && turbo build --filter=@calorie-track/api
+```
+
+👉 This ensures:
+
+* Railway runs from monorepo root
+* Builds only the API + its dependencies
+
+---
+
+## 🏗️ Render Configuration
+
+### ✅ Build Command
+
+```bash
+pnpm install && pnpm build
+```
+
+👉 This ensures:
+
+* Render runs only apps/api 
+* Builds only the API + its dependencies
+
+---
+
 ### ✅ Output
 
 Make sure your API builds to:
@@ -68,7 +98,31 @@ dist/server.js
 
 ---
 
-### ✅ Start Command
+### ✅ Start Command on `Vercel`
+
+```bash
+pnpm start
+```
+
+---
+
+### ✅ Start Command on `Railway`
+
+```bash
+pnpm --filter @calorie-track/api start
+```
+
+---
+
+### ✅ Start Command on `Render`
+
+```bash
+pnpm  start
+```
+
+---
+
+### ✅ Start Command on `api/package.json`
 
 ```bash
 node dist/server.js

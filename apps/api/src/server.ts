@@ -4,7 +4,7 @@ import { log } from "evlog";
 
 export default async function startServer() {
   try {
-    connectDB();
+    await connectDB();
     app.listen(process.env.PORT || 9000, () => {
       log.info({
         message: "Server started",
@@ -16,8 +16,8 @@ export default async function startServer() {
       message: "failed to connect database",
       couse: "database or port error",
     });
-
-    throw error;
+    console.log("error serser starting:", error);
+    process.exit(1);
   }
 }
 
