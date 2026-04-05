@@ -1,0 +1,15 @@
+{
+  "name": "@calorie-track/api-client",
+  "version": "0.0.1",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc --noEmit"
+  },
+  "private": true,
+  "devDependencies": {
+    "@calorie-track/typescript-config": "workspace:*",
+    "@types/node": "^22.15.3",
+    "typescript": "^6.0.2"
+  }
+}

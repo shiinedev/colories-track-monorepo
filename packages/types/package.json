@@ -10,7 +10,7 @@
     "./report.types.ts": "./src/report.type.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "shiinedev",
   "license": "ISC",
   "peerDependencies": {
     "@types/node": "^22.15.3",
