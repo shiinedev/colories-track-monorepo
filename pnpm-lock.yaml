@@ -300,6 +300,9 @@ importers:
 
   packages/schemas:
     dependencies:
+      tsup:
+        specifier: ^8.5.1
+        version: 8.5.1(jiti@1.21.7)(postcss@8.4.49)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3)
       zod:
         specifier: ^4.3.6
         version: 4.3.6
@@ -307,9 +310,6 @@ importers:
       '@calorie-track/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
-      tsup:
-        specifier: ^8.5.1
-        version: 8.5.1(jiti@1.21.7)(postcss@8.4.49)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3)
 
   packages/types:
     dependencies:
