@@ -1,0 +1,21 @@
+{
+  "name": "@calorie-track/schemas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "type": "module",
+  "types": "src/index.d.ts",
+  "exports": {
+    "./auth.schema": "./src/auth.schema.ts",
+    "./food.schema": "./src/food.schema.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@calorie-track/typescript-config": "workspace:*"
+  },
+  "dependencies": {
+    "zod": "^4.3.6"
+  }
+}
