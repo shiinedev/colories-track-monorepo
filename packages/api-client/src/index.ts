@@ -1,7 +1,6 @@
 export const API_URL_LOCAL = "http://10.0.2.2:9000/api/v1";
 import type { AxiosInstance, AxiosRequestConfig } from "axios";
 import axios from "axios";
-import * as SecureStore from "expo-secure-store";
 
 export interface ApiResponse<T = unknown> {
   message: string;
@@ -19,17 +18,11 @@ export class APiError extends Error {
   }
 }
 
-export const getAuthToken = (): string | null => {
-  const token = SecureStore.getItemSync("authToken");
-  return token || null;
-};
-
 export const axiosInstance: AxiosInstance = axios.create({
   baseURL: API_URL_LOCAL,
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
-    Authorization: `Bearer ${getAuthToken()}`,
   },
 });
 

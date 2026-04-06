@@ -2,5 +2,6 @@
   "extends": "@calorie-track/typescript-config/base.json",
   "compilerOptions": {
     "jsx": "react-jsx",
+    "strict": true,
   },
 }
