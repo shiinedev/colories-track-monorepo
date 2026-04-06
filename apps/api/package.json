@@ -28,7 +28,6 @@
   "dependencies": {
     "@calorie-track/eslint-config": "workspace:*",
     "@calorie-track/typescript-config": "workspace:*",
-    "@calorie-track/schemas": "workspace:*",
     "@aws-sdk/client-s3": "^3.1015.0",
     "@calorie-track/types": "workspace:*",
     "@t3-oss/env-core": "^0.13.11",

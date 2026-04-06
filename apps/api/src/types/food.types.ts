@@ -2,7 +2,7 @@ import { IFoodModel } from "../models/food.model.js";
 import type {
   FoodAnalysisResult,
   SaveFoodEntryResult,
-} from "@calorie-track/schemas/food.schema";
+} from "../schema/food.schema.js";
 
 export type ImageType = "model" | "base64";
 export type ScanFoodReturn<T> = T extends "base64"

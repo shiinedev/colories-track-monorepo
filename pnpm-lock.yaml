@@ -26,9 +26,6 @@ importers:
       '@calorie-track/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
-      '@calorie-track/schemas':
-        specifier: workspace:*
-        version: link:../../packages/schemas
       '@calorie-track/types':
         specifier: workspace:*
         version: link:../../packages/types

@@ -5,10 +5,7 @@ import {
 } from "../../controller/auth.controller.js";
 import { requireToken } from "../../middleware/auth.js";
 import { validateSchema } from "../../middleware/validate-schema.js";
-import {
-  loginSchema,
-  registerSchema,
-} from "@calorie-track/schemas/auth.schema";
+import { loginSchema, registerSchema } from "../../schema/auth.schema.js";
 import { Router } from "express";
 
 const userRouter = Router();
