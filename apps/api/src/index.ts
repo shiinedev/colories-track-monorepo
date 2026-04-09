@@ -10,12 +10,35 @@ const app: Express = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// app.use(
+//   cors({
+//     origin: process.env.FRONT_END_URL,
+//     allowedHeaders: ["Content-Type", "Authorization"],
+//     credentials: true,
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//   }),
+// );
+
+// Allow all origins for development and specific origins for production
 app.use(
   cors({
-    origin: process.env.FRONT_END_URL,
-    allowedHeaders: ["Content-Type", "Authorization"],
+    origin: (origin, callback) => {
+      // Allow requests with no origin (mobile apps, curl, Postman)
+      if (!origin) return callback(null, true);
+
+      const allowed = ["http://localhost:3000", "http://localhost:8081"];
+
+      if (
+        process.env.NODE_ENV !== "production" ||
+        allowed.includes(origin) ||
+        origin.endsWith(".railway.app")
+      ) {
+        return callback(null, true);
+      }
+
+      callback(new Error(`CORS blocked: ${origin}`));
+    },
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
   }),
 );
 
