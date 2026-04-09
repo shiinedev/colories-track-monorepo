@@ -7,8 +7,8 @@ import {
 } from "@/constants/theme";
 import { useAuth } from "@/context/authContext";
 import { Ionicons } from "@expo/vector-icons";
-import { router, useRouter } from "expo-router";
-import { Activity, useState } from "react";
+import { router } from "expo-router";
+import { useState } from "react";
 import {
   KeyboardAvoidingView,
   ScrollView,
@@ -37,8 +37,12 @@ export default function Home() {
     try {
       await login.mutateAsync({ email, password });
       router.replace("/(tabs)/home");
+      setEmail("");
+      setPassword("");
     } catch (error) {
+      console.error("error from login", error);
       Alert.alert("Error", "Inavlid Credentials, Please try again.");
+      setPassword("");
     }
   };
 

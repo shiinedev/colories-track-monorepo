@@ -1,12 +1,12 @@
-export const API_URL_LOCAL = "http://10.0.2.2:9000/api/v1";
 import type { AxiosInstance, AxiosRequestConfig } from "axios";
 import axios from "axios";
 import { getAuthToken } from "@/utils/storage";
+import { API_URL_LOCAL } from "@/constants/config";
 
-export interface ApiResponse<T = unknown> {
+export type ApiResponse<T = unknown> = {
   message: string;
   data?: T;
-}
+};
 
 export class APiError extends Error {
   constructor(

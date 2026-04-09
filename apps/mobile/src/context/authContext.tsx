@@ -97,6 +97,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       }
       queryClient.setQueryData(["currentUser"], data);
     },
+    onError: (error) => {
+      console.error("Login error:", error);
+    },
   });
 
   // logout
