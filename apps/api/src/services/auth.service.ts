@@ -1,4 +1,8 @@
-import { RegisterSchema, LoginSchema } from "../schema/auth.schema.js";
+import {
+  RegisterSchema,
+  LoginSchema,
+  UpdateUserSchema,
+} from "../schema/auth.schema.js";
 import User, { IUser } from "../models/user.model.js";
 import { IAuth } from "../types/auth.types.js";
 import { generateToken } from "../utils/token.js";
@@ -9,7 +13,7 @@ export class AuthService implements IAuth {
     input,
   }: {
     input: RegisterSchema;
-  }): Promise<Omit<IUser, "password">> {
+  }): Promise<{ user: Omit<IUser, "password">; token: string }> {
     const {
       email,
       password,
@@ -43,7 +47,12 @@ export class AuthService implements IAuth {
         username,
       });
 
-      return user;
+      const token = generateToken({ id: user._id.toString() });
+
+      return {
+        user,
+        token,
+      };
     } catch (error) {
       logger.error({
         message: "Failed to register user",
@@ -84,8 +93,34 @@ export class AuthService implements IAuth {
     };
   }
 
-  async logout(): Promise<void> {}
+  async updateProfile({
+    input,
+    userId,
+  }: {
+    input: UpdateUserSchema;
+    userId: string;
+  }): Promise<void> {
+    const { username, dailyColorieTarget, onBoardingCompleted } = input;
 
+    // check if the user exists
+    const existingUser = await User.findById(userId);
+    if (!existingUser) {
+      logger.error({
+        message: "User not found",
+        cause: userId,
+      });
+      throw new Error("User not found", { cause: userId });
+    }
+
+    const user = await User.updateOne(
+      { _id: existingUser._id },
+      {
+        username,
+        dailyColorieTarget,
+        onBoardingCompleted,
+      },
+    );
+  }
   normalizeEmail(email: string): string {
     return email.toLowerCase();
   }

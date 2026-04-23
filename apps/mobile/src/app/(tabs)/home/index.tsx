@@ -1,8 +1,13 @@
 import { Colors } from "@/constants/theme";
+import { useAuth } from "@/context/authContext";
 import { Link } from "expo-router";
 import { Text, View, StyleSheet } from "react-native";
 
 const Home = () => {
+  const { user } = useAuth();
+
+  console.log("user", user);
+
   return (
     <View style={styles.container}>
       <Text>Home Page</Text>

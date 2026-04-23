@@ -6,7 +6,7 @@ import {
   borderRadius,
 } from "@/constants/theme";
 import { useAuth } from "@/context/authContext";
-import { Ionicons } from "@expo/vector-icons";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { router } from "expo-router";
 import { useState } from "react";
 import {
@@ -36,7 +36,7 @@ export default function Home() {
     }
     try {
       await login.mutateAsync({ email, password });
-      router.replace("/(tabs)/home");
+      router.replace("/");
       setEmail("");
       setPassword("");
     } catch (error) {

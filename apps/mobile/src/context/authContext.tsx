@@ -3,7 +3,6 @@ import {
   RegisterInput,
   UpdateProfileInput,
   LoginInput,
-  User,
   AuthResponse,
 } from "@/types";
 import {
@@ -13,8 +12,9 @@ import {
   type UseMutationResult,
 } from "@tanstack/react-query";
 import { getAuthToken, saveAuthToken, removeAuthToken } from "@/utils/storage";
-import { createContext, use, useEffect, useState } from "react";
+import { createContext, use, useContext, useEffect, useState } from "react";
 import { authApi } from "@/services/auth";
+import { isReadable } from "node:stream";
 
 export interface AuthContextType {
   user: UserWithToken | undefined;
@@ -32,14 +32,10 @@ export interface AuthContextType {
     unknown
   >;
   logout: () => void;
-  updateProfile: UseMutationResult<
-    AuthResponse<User>,
-    Error,
-    UpdateProfileInput,
-    unknown
-  >;
+  updateProfile: UseMutationResult<void, Error, UpdateProfileInput, unknown>;
   refetchUser: () => void;
   isLoading: boolean;
+  isReady: boolean;
 }
 
 export const AuthContext = createContext<AuthContextType | undefined>(
@@ -95,12 +91,15 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   // register Muation
   const register = useMutation({
     mutationFn: authApi.register,
-    onSuccess: (data) => {
+    onSuccess: async (data) => {
       if (data.user.token) {
-        saveAuthToken(data.user.token);
+        console.log("token saved", data.user.token);
+        await saveAuthToken(data.user.token);
       }
-
       queryClient.setQueryData(["currentUser"], data);
+    },
+    onError: (error) => {
+      console.error("Registration error:", error);
     },
   });
 
@@ -142,12 +141,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     isLoading,
     refetchUser,
     isAuthenticated: !!user,
+    isReady,
   };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
 export const useAuth = () => {
-  const context = use(AuthContext);
+  const context = useContext(AuthContext);
   if (!context) {
     throw new Error("useAuth must be used within an AuthProvider");
   }

@@ -16,5 +16,16 @@ export const loginSchema = z.object({
   password: z.string().min(1, "Password is required"),
 });
 
+export const updateUserSchema = z.object({
+  username: z.string().min(1, "Username is required").optional(),
+  dailyColorieTarget: z
+    .number()
+    .min(1, "Daily target must be at least 1")
+    .optional(),
+  onBoardingCompleted: z.boolean().default(false),
+});
+
+export type UpdateUserSchema = z.infer<typeof updateUserSchema>;
+
 export type LoginSchema = z.infer<typeof loginSchema>;
 export type RegisterSchema = z.infer<typeof registerSchema>;

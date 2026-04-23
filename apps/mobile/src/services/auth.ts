@@ -39,7 +39,8 @@ export const authApi = {
       console.log("result from loging", result);
 
       if (result.user.token) {
-        await saveAuthToken(result.user.token);
+        const token = await saveAuthToken(result.user.token);
+        console.log("token saved", token);
       }
 
       return result;
@@ -50,7 +51,7 @@ export const authApi = {
   },
   async getCurrentUser() {
     try {
-      const result = await api.get<AuthResponse<UserWithToken>>("/auth/user");
+      const result = await api.get<AuthResponse<UserWithToken>>("/auth/me");
       return result.user;
     } catch (error) {
       console.error("error getCurrentUser;", error);
@@ -60,7 +61,8 @@ export const authApi = {
 
   async updateProfile(input: UpdateProfileInput) {
     try {
-      return await api.put<AuthResponse<User>>("/auth/user", input);
+      console.log("updateProfile input", input);
+      return await api.put<void>("/auth/update", input);
     } catch (error) {
       console.error("error updateProfile;", error);
       throw error;

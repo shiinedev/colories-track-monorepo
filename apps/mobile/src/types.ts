@@ -35,3 +35,9 @@ export interface FoodResponse<T> extends ReponseBase {
 export interface ReportResponse<T> extends ReponseBase {
   data: T;
 }
+
+export type Feature = {
+  iconColor: "IconAmber" | "IconBlue" | "IconViolet";
+  title: string;
+  text: string;
+};

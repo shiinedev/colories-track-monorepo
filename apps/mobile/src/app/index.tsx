@@ -6,7 +6,16 @@ import { useEffect } from "react";
 import { ActivityIndicator, View } from "react-native";
 
 export default function IndexScreen() {
-  const { isAuthenticated, user, isLoading } = useAuth();
+  const { isAuthenticated, user, isLoading, isReady } = useAuth();
+
+  console.log(
+    "isAuthenticated",
+    isAuthenticated,
+    "user",
+    user,
+    "isLoading",
+    isLoading,
+  );
 
   useEffect(() => {
     const checkToken = async () => {
@@ -16,7 +25,7 @@ export default function IndexScreen() {
     checkToken();
   }, []);
 
-  if (isLoading) {
+  if (!isReady && isLoading) {
     return (
       <View
         style={{
@@ -32,7 +41,7 @@ export default function IndexScreen() {
   }
 
   if (isAuthenticated) {
-    if (!user?.onBoardingCompleted) {
+    if (user && !user.onBoardingCompleted) {
       return <Redirect href="/onboarding" />;
     }
     return <Redirect href="/(tabs)/home" />;
