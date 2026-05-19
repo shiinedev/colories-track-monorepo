@@ -304,20 +304,6 @@ const styles = StyleSheet.create({
   disabled: {
     opacity: 0.6,
   },
-  imagePickerIcon: {
-    backgroundColor: Colors.blueLight,
-    width: 40,
-    height: 40,
-    borderRadius: borderRadius.full,
-    alignItems: "center",
-    justifyContent: "center",
-    marginRight: 12,
-  },
-  imagePickerText: {
-    color: Colors.primary,
-    fontSize: fontSize.lg,
-    fontWeight: fontWeight.semibold,
-  },
   label: {
     color: Colors.textSecondary,
     fontSize: fontSize.base,
@@ -325,11 +311,12 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
     letterSpacing: 0.5,
     marginBottom: spacing.sm,
-    marginLeft: 4,
+    marginHorizontal: spacing.sm,
   },
   inputContainer: {
     backgroundColor: Colors.white,
     borderRadius: borderRadius.lg,
+    marginHorizontal: spacing.sm,
     marginBottom: 20,
     borderWidth: 1,
     borderColor: Colors.border,
@@ -359,6 +346,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     shadowColor: Colors.black,
     shadowOffset: { width: 0, height: 1 },
+    marginHorizontal: spacing.sm,
     shadowOpacity: 0.05,
     shadowRadius: 2,
     elevation: 1,

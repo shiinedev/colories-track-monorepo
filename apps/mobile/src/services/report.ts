@@ -1,20 +1,21 @@
 import { AxiosError } from "axios";
 import { api } from "./api";
 import {
-  IDailyReportStats,
-  IMonthlyReportStats,
-  IWeeklyReportStats,
+  DailyReportStats,
+  MonthlyReportStats,
+  WeeklyReportStats,
   ReportResponse,
 } from "@/types";
 
 export const reportService = {
   getDailyReport: async (date: string) => {
     try {
-      const { data } = await api.get<
-        Promise<ReportResponse<IDailyReportStats>>
-      >("/reports/daily", {
-        params: { date },
-      });
+      const { data } = await api.get<Promise<ReportResponse<DailyReportStats>>>(
+        "/reports/daily",
+        {
+          params: { date },
+        },
+      );
       return data;
     } catch (error) {
       console.error("error getting daily report", error);
@@ -28,7 +29,7 @@ export const reportService = {
   getWeeklyReport: async () => {
     try {
       const { data } =
-        await api.get<ReportResponse<IWeeklyReportStats>>("/reports/weekly");
+        await api.get<ReportResponse<WeeklyReportStats>>("/reports/weekly");
       return data;
     } catch (error) {
       console.error("error getting weekly report", error);
@@ -41,7 +42,7 @@ export const reportService = {
 
   getMonthlyReport: async (year: number, month: number) => {
     try {
-      const { data } = await api.get<ReportResponse<IMonthlyReportStats>>(
+      const { data } = await api.get<ReportResponse<MonthlyReportStats>>(
         "/reports/monthly",
         {
           params: { year, month },

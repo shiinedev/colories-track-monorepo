@@ -70,7 +70,9 @@ export interface ScanFoodResult extends Omit<IFoodResult, "userId"> {
 
 export type SaveFoodEntryInput = ScanFoodResult;
 
-export type FoodEntry = Omit<ScanFoodResult, "description" | "imageBase64">;
+export type FoodEntry = Omit<ScanFoodResult, "description" | "imageBase64"> & {
+  id: string;
+};
 
 // report types
 // export type MealType = "breakfast" | "lunch" | "dinner" | "snack";
@@ -90,11 +92,6 @@ export interface IMealStats extends IMealBreakdown {
   _id: string;
 }
 
-export interface IOverallStats extends IBaseStats {
-  _id: null;
-  totalEntries: number;
-}
-
 export interface IMacrosStats {
   grams: number;
   calories: number;
@@ -107,21 +104,7 @@ export type MacrosStats = Record<MicrostatsKeys, IMacrosStats>;
 
 export type IDailyStats = IMealStats;
 
-export interface IDailyReportStats extends IBaseStats {
-  totalEntries: number;
-  mealBreakdown: Record<MealType, IMealBreakdown>;
-  macros: MacrosStats;
-}
-
 export type DailyData = Record<string, IMealBreakdown>;
-
-export interface IWeeklyReportStats extends Omit<
-  IDailyReportStats,
-  "mealBreakdown"
-> {
-  dailyData: DailyData;
-  avgCalories: number;
-}
 
 export interface IWeekSummary extends IBaseStats {
   date: string;
@@ -136,7 +119,39 @@ export type DailyTotals = {
   dayCalories: number;
 };
 
-export interface IMonthlyReportStats extends IWeeklyReportStats {
+export interface DailyReportStats {
+  goal: number;
+  consumed: number;
+  remaining: number;
+  completedCalories: number;
+  totalEntries: number;
+  mealBreakdown: Record<MealType, IMealBreakdown>;
+  macros: MacrosStats;
+}
+
+export interface WeeklyReportStats {
+  week: IWeekSummary[];
+  macros: MacrosStats;
+  totalCalories: number;
+  totalCarbs: number;
+  totalEntries: number;
+  totalFat: number;
+  totalProtein: number;
+  avgCalories: number;
+}
+
+export interface MonthlyReportStats {
+  targetDate: Date;
+  targetyear: number;
+  targetMonth: number;
+  avgCalories: number;
   highestDay: number;
   daysTracked: number;
+  macros: MacrosStats;
+  totalCalories: number;
+  totalProtein: number;
+  totalCarbs: number;
+  totalFat: number;
+  totalEntries: number;
+  chartDate: DailyData;
 }

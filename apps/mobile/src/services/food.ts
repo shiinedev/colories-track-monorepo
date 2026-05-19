@@ -70,10 +70,10 @@ export const foodService = {
 
   getFoodEntries: async (date: string): Promise<FoodEntry[]> => {
     try {
-      const data = await api.get<FoodEntry[]>("/food/entries", {
+      const data = await api.get<{ entries: FoodEntry[] }>("/food", {
         params: { date },
       });
-      return data;
+      return data.entries;
     } catch (error) {
       console.error("Error getting food entries", error);
       throw (
